@@ -1,5 +1,5 @@
 # templates
 
 ## nodejs
-- Jest
-- NodeJS
+### yarn test
+### yarn mutant

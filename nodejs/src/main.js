@@ -4,5 +4,8 @@ module.exports = {
   },
   substract: (a, b) => {
     return a - b;
+  },
+  console: (a) => {
+    console.log(`hello ${a}`);
   }
 }

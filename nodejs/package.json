@@ -12,7 +12,7 @@
     "jest-environment-jsdom-sixteen": "^1.0.3"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch --silent --verbose",
     "mutant": "stryker run"
   }
 }

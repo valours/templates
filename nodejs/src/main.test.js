@@ -5,18 +5,27 @@ describe('simple test', () => {
   test('add', () => {
     expect(main.add(1, 2)).toBe(3);
   });
-
-  test('substract', () => {
-    expect(main.substract(5, 2)).toBe(3);
-  })
 })
 
-test('test with spy', () => {
-  const spy = jest.spyOn(video, 'play');
-  const isPlaying = video.play();
+describe('spy', () => {
+  test('spy console', () => {
+    // given
+    const consoleLog = jest.spyOn(console, 'log')
 
-  expect(spy).toHaveBeenCalled();
-  expect(isPlaying).toBe(true);
+    // when
+    main.console('John')
 
-  spy.mockRestore();
-});
+    //then
+    expect(consoleLog).toHaveBeenCalledWith('hello John');
+  })
+
+  test('spy module', () => {
+    const spy = jest.spyOn(video, 'play');
+    const isPlaying = video.play();
+
+    expect(spy).toHaveBeenCalled();
+    expect(isPlaying).toBe(true);
+
+    spy.mockRestore();
+  });
+})
